@@ -1,0 +1,213 @@
+.container {
+    max-width: 1300px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 30px;
+}
+
+.page-title {
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: var(--primary-dark-shade);
+    grid-column: 1 / -1; }
+
+.calendar-wrapper {
+    flex-grow: 1;
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.calendar-header h2 {
+    font-size: 1.5em;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.calendar-header button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.calendar-header button:hover {
+    background-color: var(--primary-dark-shade);
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: bold;
+    color: var(--primary-dark-shade);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: minmax(100px, auto); 
+    border-left: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+}
+
+.calendar-day {
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 8px;
+    font-size: 0.9em;
+    min-height: 100px;
+    cursor: pointer;
+    background-color: var(--card-bg);
+    transition: background-color 0.2s;
+    position: relative;
+}
+
+.calendar-day:hover {
+    background-color: var(--hover-color);
+}
+
+.calendar-day.disabled {
+    background-color: var(--bg-color);
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.calendar-day.current-day {
+    background-color: #FFF3E0; 
+    color: #E65100;
+}
+.dark-theme .calendar-day.current-day {
+    background-color: #3e2723; 
+    color: #FFB74D;
+}
+
+.day-number {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    font-size: 1.1em;
+}
+.event-item {
+    font-size: 0.75em;
+    padding: 3px 5px;
+    margin-bottom: 3px;
+    border-radius: 4px;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: grab; 
+    user-select: none;
+}
+.event-item:active {
+    cursor: grabbing;
+}
+
+.priority-High { background-color: #E57373; }
+.priority-Medium { background-color: #FFB74D; }
+.priority-Low { background-color: #81C784; }
+.event-Exam { background-color: #64B5F6; } 
+.event-Appointment { background-color: #9575CD; } 
+
+.daily-events {
+    width: 350px;
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+}
+
+.daily-events h3 {
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.daily-event-item {
+    padding: 12px;
+    margin-bottom: 10px;
+    border-left: 5px solid;
+    border-radius: 6px;
+    background-color: var(--hover-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.daily-event-item .details strong {
+    display: block;
+    font-size: 1.1em;
+}
+.daily-event-item .details span {
+    font-size: 0.85em;
+    opacity: 0.7;
+}
+
+.daily-event-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+.daily-event-actions button:hover {
+    opacity: 1;
+    color: var(--danger-color);
+}
+
+.modal-content .date-time-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+.modal-content .date-time-inputs input {
+    margin-bottom: 0 !important;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .daily-events {
+        width: 100%;
+    }
+    .calendar-grid {
+        grid-auto-rows: minmax(80px, auto);
+    }
+}
+@media (max-width: 600px) {
+    .calendar-day {
+        min-height: 60px;
+        padding: 5px;
+    }
+    .day-number {
+        font-size: 0.9em;
+    }
+    .event-item {
+        font-size: 0.7em;
+        padding: 2px 4px;
+    }
+}

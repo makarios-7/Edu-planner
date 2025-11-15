@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPlanner | Calendar</title>
+    <link rel="stylesheet" href="index.css"> 
+    <link rel="stylesheet" href="projects.css"> 
+    <link rel="stylesheet" href="calendar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <h2 class="logo">EduPlanner</h2>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="task.html">Tasks</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a class="active" href="calendar.html">Calendar</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+        <button id="toggle-theme"><i class="fa-solid fa-moon"></i></button>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title">📅 Academic Calendar Overview</h1>
+
+        <div class="calendar-wrapper">
+            <div class="calendar-header">
+                <button id="prevMonth"><i class="fa-solid fa-chevron-left"></i></button>
+                <h2 id="monthYear"></h2>
+                <button id="nextMonth"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+
+            <div class="calendar-weekdays">
+                <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div>
+                <div>Thu</div><div>Fri</div><div>Sat</div>
+            </div>
+
+            <div class="calendar-grid" id="calendarGrid"></div>
+        </div>
+
+        <div class="daily-events">
+            <h3>Events for <span id="selectedDateText">Today</span></h3>
+            <div id="dailyEventsList" class="daily-events-list">
+                <p style="opacity: 0.6; text-align: center;">Click a date to see details.</p>
+            </div>
+            <button id="openTaskModalBtn" class="btn" style="width: 100%; margin-top: 20px;"><i class="fa-solid fa-plus"></i> Add Event</button>
+        </div>
+    </div>
+
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modalTitle">Add New Event</h3>
+            
+            <input type="text" id="eventTitle" placeholder="Event Title (e.g., Study Session, Lecture)">
+            
+            <select id="eventType">
+                <option value="Task">Task</option>
+                <option value="Project">Project Deadline</option>
+                <option value="Appointment">Appointment</option>
+                <option value="Exam">Exam</option>
+            </select>
+            
+            <input type="text" id="eventSubject" placeholder="Subject (Optional)">
+            
+            <div class="date-time-inputs">
+                <input type="date" id="eventDate">
+                <input type="time" id="eventTime" placeholder="Time (Optional)">
+            </div>
+            
+            <select id="eventPriority">
+                <option value="High">High Priority</option>
+                <option value="Medium">Medium Priority</option>
+                <option value="Low">Low Priority</option>
+            </select>
+
+            <textarea id="eventDescription" placeholder="Notes..."></textarea>
+            
+            <div class="modal-buttons">
+                <button id="saveEventBtn" class="btn">Save Event</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="calendar.js"></script>
+    <script src="auth-check.js"></script>
+
+</body>
+</html>
