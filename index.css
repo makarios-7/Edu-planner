@@ -1,0 +1,272 @@
+
+:root {
+    --primary-color: #4CAF50;
+    --primary-dark-shade: #388E3C;
+    --text-color: #333333; 
+    --bg-color: #F8F9FA; 
+    --card-bg: #FFFFFF;  
+    --border-color: #E0E0E0; 
+    --hover-color: #F0F0F0; 
+    --danger-color: #E57373; 
+}
+
+
+.dark-theme {
+    
+    --primary-color: #81C784;
+    --primary-dark-shade: #66BB6A;
+    
+    --text-color: #EAEAEA;
+    --bg-color: #212529; 
+    --card-bg: #2C3034; 
+    --border-color: #3A3F44; 
+    --hover-color: #373C40; 
+    --danger-color: #EF9A9A; 
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.4s, color 0.4s;
+    line-height: 1.6;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: var(--card-bg);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08); 
+}
+
+.logo {
+    color: var(--primary-color);
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s;
+    font-size: 0.95em;
+}
+
+.nav-links li a.active,
+.nav-links li a:hover {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+#toggle-theme {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 1.4em;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+#toggle-theme:hover {
+    opacity: 1;
+}
+
+
+.hero {
+    text-align: center;
+    padding: 80px 5%;
+    background: linear-gradient(135deg, var(--bg-color), var(--hover-color)); 
+}
+
+.hero-title {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.hero-desc {
+    font-size: 1.2em;
+    color: var(--text-color);
+    opacity: 0.75;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px; 
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: var(--primary-dark-shade); 
+    transform: translateY(-2px);
+}
+
+
+.overview {
+    padding: 40px 5%;
+}
+
+h2 {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-left: 6px solid var(--primary-color); 
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.clickable-card {
+    cursor: pointer;
+}
+
+.card i {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 2.5em;
+}
+
+.card h3 {
+    margin: 5px 0;
+    font-size: 2.2em;
+    color: var(--primary-dark-shade); 
+}
+
+.card p {
+    color: var(--text-color);
+    opacity: 0.6;
+    margin-top: 5px;
+    font-size: 1em;
+}
+
+.progress-bar {
+    background-color: var(--border-color);
+    height: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0%; 
+    background-color: var(--primary-color);
+    transition: width 0.7s ease-in-out;
+}
+
+.upcoming-tasks {
+    padding: 40px 5%;
+}
+
+.upcoming-tasks h2 {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+#tasks-list {
+    list-style: none;
+    padding: 0;
+}
+
+#tasks-list li {
+    background-color: var(--card-bg);
+    margin-bottom: 12px;
+    padding: 18px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid var(--primary-dark-shade);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s;
+}
+
+#tasks-list li:hover {
+    background-color: var(--hover-color);
+}
+
+.task-info strong {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 3px;
+    font-size: 1.1em;
+}
+
+.task-info span {
+    font-size: 0.9em;
+    opacity: 0.7;
+}
+
+.task-deadline {
+    font-weight: bold;
+    color: var(--danger-color); 
+    font-size: 1em;
+}
+
+.empty-state {
+    text-align: center;
+    opacity: 0.6;
+    padding: 40px;
+}
+
+.btn-secondary {
+    background: none;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    display: block;
+    width: 200px;
+    margin: 30px auto 0;
+    text-align: center;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}

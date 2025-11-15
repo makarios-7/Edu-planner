@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPlanner - Home</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <h2 class="logo">EduPlanner</h2>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="task.html">Tasks</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+        <button id="toggle-theme"><i class="fa-solid fa-moon"></i></button>
+    </nav>
+
+    <section class="hero">
+        <h1 class="hero-title" id="welcome-message">Welcome Back! Start Planning Your Day.</h1>
+        <p class="hero-desc">Manage your tasks, track progress, and plan smarter with EduPlanner.</p>
+        <a href="task.html" class="btn">Start Planning <i class="fa-solid fa-arrow-right"></i></a>
+    </section>
+
+    <section class="overview">
+        <h2>Today's Overview</h2>
+
+        <div class="cards">
+            <div class="card clickable-card" data-target="task.html?filter=today">
+                <i class="fa-solid fa-list-check fa-2x"></i>
+                <h3 id="tasks-today">0</h3>
+                <p>Tasks Due Today</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-circle-check fa-2x"></i>
+                <h3 id="completed-tasks">0</h3>
+                <p>Completed Tasks</p>
+                <div class="progress-bar">
+                    <div id="completion-bar" class="progress"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-calendar-days fa-2x"></i>
+                <h3 id="next-deadline">---</h3>
+                <p>Next Deadline</p>
+            </div>
+            
+            <div class="card">
+                <i class="fa-solid fa-bullseye fa-2x"></i>
+                <h3 id="weekly-focus">0 hrs</h3>
+                <p>Weekly Study Focus</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="upcoming-tasks">
+        <h2>🗓️ Upcoming Tasks</h2>
+        <ul id="tasks-list">
+            <li class="empty-state">No urgent tasks coming up! Enjoy the quiet.</li>
+        </ul>
+        <a href="task.html" class="btn-secondary">View All Tasks</a>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="auth-check.js"></script> 
+
+</body>
+</html>
