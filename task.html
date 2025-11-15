@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPlanner - Tasks</title>
+    <link rel="stylesheet" href="index.css"> 
+    <link rel="stylesheet" href="tasks.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <h2 class="logo">EduPlanner</h2>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a class="active" href="task.html">Tasks</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+        <button id="toggle-theme"><i class="fa-solid fa-moon"></i></button>
+    </nav>
+
+    <section class="tasks-container">
+        <h2>📚 Manage Your Study Tasks</h2>
+
+        <div class="add-task-box">
+            <input type="text" id="taskName" placeholder="Task Title (e.g., Prepare for Midterm)">
+            
+            <input type="text" id="taskSubject" placeholder="Subject (e.g., Data Structures)">
+
+            <input type="date" id="taskDate">
+
+            <select id="taskType">
+                <option value="Assignment">Assignment</option>
+                <option value="Reading">Reading</option>
+                <option value="Exam Prep">Exam Prep</option>
+                <option value="Project">Project</option>
+            </select>
+
+            <select id="taskPriority">
+                <option value="High">High Priority</option>
+                <option value="Medium">Medium Priority</option>
+                <option value="Low">Low Priority</option>
+            </select>
+            
+            <textarea id="taskDescription" placeholder="Optional: Add notes or description..."></textarea>
+
+            <button id="addTaskBtn" class="btn">Add Task</button>
+        </div>
+        
+        <div class="controls-bar">
+            <div class="filters">
+                <button data-filter="all" class="active">All</button>
+                <button data-filter="pending">Pending</button>
+                <button data-filter="completed">Completed</button>
+                <button data-filter="overdue">Overdue</button>
+            </div>
+            
+            <select id="sortTasks" class="sort-select">
+                <option value="deadline_asc">Sort by Deadline (Asc)</option>
+                <option value="priority_desc">Sort by Priority (Desc)</option>
+                <option value="added_desc">Sort by Added Date (Newest)</option>
+            </select>
+        </div>
+
+
+        <div id="taskList" class="task-list">
+            <p id="emptyState" style="text-align: center; color: var(--text-color); opacity: 0.6; padding: 50px; display: none;">
+                🎉 All tasks completed! Time to add a new one.
+            </p>
+        </div>
+
+    </section>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Edit Task</h3>
+            <input type="text" id="editName">
+            <input type="text" id="editSubject">
+            <input type="date" id="editDate">
+            <select id="editType">
+                <option value="Assignment">Assignment</option>
+                <option value="Reading">Reading</option>
+                <option value="Exam Prep">Exam Prep</option>
+                <option value="Project">Project</option>
+            </select>
+            <select id="editPriority">
+                <option value="High">High Priority</option>
+                <option value="Medium">Medium Priority</option>
+                <option value="Low">Low Priority</option>
+            </select>
+            <textarea id="editDescription"></textarea>
+            <button id="saveEditBtn" class="btn">Save Changes</button>
+        </div>
+    </div>
+
+
+    <script src="task.js"></script>
+    </body>
+
+</html>
