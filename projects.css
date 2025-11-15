@@ -1,0 +1,273 @@
+.projects-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.projects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.add-btn {
+    padding: 12px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.filter-select {
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.projects-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 5px solid var(--primary-color);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.project-title {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--primary-dark-shade);
+    margin: 0;
+}
+
+.project-meta {
+    font-size: 0.9em;
+    opacity: 0.7;
+    margin-top: 5px;
+}
+
+.project-status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9em;
+    color: white;
+}
+
+.status-Planning { background-color: #7986CB; } 
+.status-In_Progress { background-color: #FFB74D; }
+.status-Review { background-color: #64B5F6; } 
+.status-Completed { background-color: #4CAF50; } 
+
+.progress-info {
+    font-size: 0.9em;
+    opacity: 0.8;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-progress-bar {
+    background-color: var(--border-color);
+    height: 12px;
+    border-radius: 6px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    background-color: var(--primary-color);
+    transition: width 0.7s ease-in-out;
+}
+
+.project-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-left: 10px;
+    color: var(--text-color);
+    opacity: 0.7;
+    transition: opacity 0.2s, color 0.2s;
+}
+
+.project-actions button:hover {
+    opacity: 1;
+    color: var(--primary-color);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    margin: 5% auto; 
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    width: 90%;
+    max-width: 700px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-content h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.modal-inputs-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="date"],
+.modal-content select,
+.modal-content textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-sizing: border-box;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+.modal-content textarea {
+    grid-column: 1 / -1;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.modal-buttons {
+    text-align: right;
+    margin-top: 20px;
+}
+
+#subtasksArea h4 {
+    color: var(--primary-color);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.subtasks-list {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: var(--bg-color);
+}
+
+.subtask-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dotted var(--border-color);
+}
+.subtask-item:last-child {
+    border-bottom: none;
+}
+
+.subtask-item input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: var(--primary-color);
+}
+
+.subtask-item span.subtask-name {
+    flex-grow: 1;
+    color: var(--text-color);
+}
+
+.subtask-item.completed span.subtask-name {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.subtask-item button {
+    background: none;
+    border: none;
+    color: var(--danger-color);
+    cursor: pointer;
+    font-size: 0.9em;
+    opacity: 0.7;
+}
+
+.add-subtask-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+.add-subtask-form input {
+    flex-grow: 1;
+    margin-bottom: 0 !important;
+}
+
+.btn-subtask {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-subtask:hover {
+    background-color: var(--primary-dark-shade);
+}
+@media (max-width: 768px) {
+    .projects-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .add-btn {
+        width: 100%;
+    }
+    .modal-inputs-group {
+        grid-template-columns: 1fr;
+    }
+}
